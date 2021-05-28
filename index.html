@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap 5 Simple Admin Dashboard</title>
-    <link rel="stylesheet" href="res/bootstrap@5.0.0-alpha2.min.css">
-    <link rel="stylesheet" href="res/chartist.min.css">
+    <title>Embed demo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style>
         .sidebar {
             position: fixed;
@@ -59,25 +58,25 @@
     </nav>
     
     <div class="jumbotron bg-primary text-white mb-5 px-3 py-5 ">
-      <h1>Page title here</h1>
+      <h1>Course PDF Embed Demo</h1>
     </div>
     
     <div class="container">
       <div class="row">
         <div class="col-md-8">
           
-         
-         <div id="adobe-dc-view" style="width: 100%; height: auto;"></div>
-         <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-         <script type="text/javascript">
-           document.addEventListener("adobe_dc_view_sdk.ready", function() {
-             var adobeDCView = new AdobeDC.View({ clientId: "aded5556a2d24ca5b437582b57a98eae", divId: "adobe-dc-view" });
-             adobeDCView.previewFile({
-               content: { location: { url: "Course_Level_1.1_PDF.pdf" } },
-               metaData: { fileName: "Test.pdf" }
-             }, { embedMode: "SIZED_CONTAINER" });
-           });
-         </script> 
+ <div id="adobe-dc-view" style="height: 360px; width: 500px;"></div>
+<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+<script type="text/javascript">
+	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+		var adobeDCView = new AdobeDC.View({clientId: "aded5556a2d24ca5b437582b57a98eae", divId: "adobe-dc-view"});
+		adobeDCView.previewFile({
+			content:{location: {url: "Course_Level_1.1_PDF.pdf"}},
+			metaData:{fileName: "Bodea Brochure.pdf"}
+		}, {embedMode: "SIZED_CONTAINER", dockPageControls: false, showDownloadPDF: false, 
+			showPrintPDF: false});
+	});
+</script>
           
           
         </div>
@@ -123,3 +122,5 @@
     </script>
 </body>
 </html>
+
+aded5556a2d24ca5b437582b57a98eae
