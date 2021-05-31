@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed demo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            padding: 90px 0 0;
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+            z-index: 99;
+        }
+
+        @media (max-width: 767.98px) {
+            .sidebar {
+                top: 11.5rem;
+                padding: 0;
+            }
+        }
+
+        .navbar {
+            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .1);
+        }
+
+        @media (min-width: 767.98px) {
+            .navbar {
+                top: 0;
+                position: sticky;
+                z-index: 999;
+            }
+        }
+
+        .sidebar .nav-link {
+            color: #333;
+        }
+
+        .sidebar .nav-link.active {
+            color: #0d6efd;
+        }
+        
+        iframe {
+          background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light p-3">
+        <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
+            <a class="navbar-brand" href="#">
+                Energetic Release Therapy
+            </a>
+            <button class="navbar-toggler d-md-none collapsed mb-3" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    
+    <div class="jumbotron bg-primary text-white mb-5 px-3 py-5 ">
+      <h1>Course Google Docs Embed Demo</h1>
+    </div>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+
+<iframe id="embeddedPresentation" src="https://docs.google.com/presentation/d/e/2PACX-1vQOLlEIIQy7XQ2HfYS69eG5TTYMI2qAUk3YhdchBNtOikdIJ8hBXHe9Z94RlZalqb5Nx43XW_MToN06/embed?start=false&loop=false&delayms=60000689&rm=minimal" frameborder="0" width="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+          
+        </div>
+      </div>
+    </div>
+    
+    
+    
+<footer class="mt-5 px-3 py-3 bg-secondary">
+  <span class="text-white">&copy; 2021 Connie Walsh Parsons / Energetic Release Therapy</span>
+</footer>
+
+<script>
+  let deviceWidth = window.innerWidth;
+  
+  let pdfContainerWidth = document.getElementById("embeddedPresentation").offsetWidth;
+
+  let ratio = 9/16;
+  
+  let pdfContainerNewHeight = pdfContainerWidth * ratio;
+ 
+  
+  document.getElementById("embeddedPresentation").style.height = pdfContainerNewHeight + "px";
+  
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+
+</body>
+</html>
