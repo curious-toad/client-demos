@@ -43,6 +43,10 @@
         .sidebar .nav-link.active {
             color: #0d6efd;
         }
+        
+        iframe {
+          background-color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -60,10 +64,10 @@
                   <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="demo-embedded-pdf.html">Embedded PDF</a>
+                  <a class="nav-link" href="demo-embedded-pdf.html">Embedded PDF</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="demo-embed-google-docs.html">Google Docs</a>
+                  <a class="nav-link active" href="demo-embed-google-docs.html">Google Docs</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="demo-embed-slides-com.html">Slides.com</a>
@@ -72,25 +76,23 @@
             </div>
           </div>
         </nav>
-    
     <div class="jumbotron bg-primary text-white mb-5 px-3 py-5 ">
-      <h1>Course PDF Embed Demo</h1>
+      <h1>Course Google Docs Embed Demo</h1>
     </div>
     
     <div class="container">
       <div class="row">
         <div class="col-md-10 offset-md-1">
-          
-          <object id="embeddedPDF" width="100%" type="application/pdf" data="/Course_Level_1.1_PDF.pdf.pdf?#scrollbar=0&toolbar=0&navpanes=0">
-    <p>Your browser does not support embedded PDFs. <a href="Course_Level_1.1_PDF.pdf" download>Download to view</a>.</p>
-</object>
 
-          
+<iframe id="embeddedPresentation" src="https://docs.google.com/presentation/d/e/2PACX-1vQOLlEIIQy7XQ2HfYS69eG5TTYMI2qAUk3YhdchBNtOikdIJ8hBXHe9Z94RlZalqb5Nx43XW_MToN06/embed?start=false&loop=false&delayms=60000689&rm=minimal" frameborder="0" width="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
           
         </div>
       </div>
     </div>
+    
+    
+    
 <footer class="mt-5 px-3 py-3 bg-secondary">
   <span class="text-white">&copy; 2021 Connie Walsh Parsons / Energetic Release Therapy</span>
 </footer>
@@ -98,14 +100,14 @@
 <script>
   let deviceWidth = window.innerWidth;
   
-  let pdfContainerWidth = document.getElementById("embeddedPDF").offsetWidth;
+  let pdfContainerWidth = document.getElementById("embeddedPresentation").offsetWidth;
 
   let ratio = 9/16;
   
   let pdfContainerNewHeight = pdfContainerWidth * ratio;
  
   
- // document.getElementById("adobe-dc-view").style.height = pdfContainerNewHeight + "px";
+  document.getElementById("embeddedPresentation").style.height = pdfContainerNewHeight + "px";
   
 </script>
 
